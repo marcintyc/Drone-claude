@@ -42,3 +42,7 @@ logs
 # Temporary files
 *.tmp
 *.temp
+
+# Allow video files for hero background
+!dji-hero-video.mp4
+!*.mp4

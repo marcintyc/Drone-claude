@@ -101,7 +101,6 @@ body {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -109,15 +108,40 @@ body {
     overflow: hidden;
 }
 
-.hero::before {
-    content: '';
+.hero-background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: -2;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+/* Video loading fallback */
+.hero-background-video:not([src]) {
+    display: none;
+}
+
+/* Ensure video loads properly */
+@supports (object-fit: cover) {
+    .hero-background-video {
+        object-fit: cover;
+    }
+}
+
+.hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0" stop-color="%23ffffff" stop-opacity="0.1"/><stop offset="100%" stop-color="%23ffffff" stop-opacity="0"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23a)"/><circle cx="800" cy="300" r="150" fill="url(%23a)"/><circle cx="600" cy="700" r="120" fill="url(%23a)"/></svg>');
-    animation: float 20s ease-in-out infinite;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
 }
 
 @keyframes float {
@@ -648,6 +672,19 @@ body {
 
     .nav-menu.active {
         left: 0;
+    }
+
+    /* Mobile video optimization */
+    .hero-background-video {
+        display: none;
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .hero-overlay {
+        background: rgba(0, 0, 0, 0.2);
     }
 
     .hero-title {

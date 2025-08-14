@@ -222,14 +222,14 @@ function showMessage(message, type = 'info') {
     }, 5000);
 }
 
-// Parallax Effect for Hero Section
+// Subtle parallax effect for hero content only (not affecting video)
 window.addEventListener('scroll', function() {
     const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero');
+    const heroContent = document.querySelector('.hero-content');
     
-    if (hero) {
-        const rate = scrolled * -0.5;
-        hero.style.transform = `translateY(${rate}px)`;
+    if (heroContent && window.innerWidth > 768) {
+        const rate = scrolled * -0.3;
+        heroContent.style.transform = `translateY(${rate}px)`;
     }
 });
 
@@ -274,7 +274,43 @@ window.addEventListener('load', function() {
             heroContent.style.transform = 'translateY(0)';
         }, 100);
     }
+    
+    // Initialize hero video
+    initializeHeroVideo();
 });
+
+// Hero Video Initialization
+function initializeHeroVideo() {
+    const video = document.querySelector('.hero-background-video');
+    
+    if (video) {
+        // Ensure video plays on mobile devices that support it
+        video.addEventListener('loadeddata', function() {
+            console.log('Hero video loaded successfully');
+        });
+        
+        // Fallback for video loading issues
+        video.addEventListener('error', function() {
+            console.log('Video failed to load, falling back to gradient background');
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+            }
+        });
+        
+        // Optimize video playback
+        video.addEventListener('canplay', function() {
+            video.play().catch(function(error) {
+                console.log('Auto-play prevented:', error);
+                // Fallback to gradient if autoplay is blocked
+                const hero = document.querySelector('.hero');
+                if (hero) {
+                    hero.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+                }
+            });
+        });
+    }
+}
 
 // Typing Effect for Hero Title (Optional Enhancement)
 document.addEventListener('DOMContentLoaded', function() {

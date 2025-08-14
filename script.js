@@ -227,8 +227,8 @@ window.addEventListener('scroll', function() {
     const scrolled = window.pageYOffset;
     const heroContent = document.querySelector('.hero-content');
     
-    if (heroContent && window.innerWidth > 768) {
-        const rate = scrolled * -0.3;
+    if (heroContent && window.innerWidth > 768 && scrolled > 0) {
+        const rate = scrolled * -0.2;
         heroContent.style.transform = `translateY(${rate}px)`;
     }
 });
@@ -262,7 +262,17 @@ window.addEventListener('load', function() {
         }, 500);
     }
     
-    // Animate hero content
+    // Initialize hero video first
+    initializeHeroVideo();
+    
+    // Animate hero content after short delay
+    setTimeout(() => {
+        animateHeroContent();
+    }, 300);
+});
+
+// Separate function for hero content animation
+function animateHeroContent() {
     const heroContent = document.querySelector('.hero-content');
     if (heroContent) {
         heroContent.style.opacity = '0';
@@ -272,12 +282,14 @@ window.addEventListener('load', function() {
             heroContent.style.transition = 'all 1s ease';
             heroContent.style.opacity = '1';
             heroContent.style.transform = 'translateY(0)';
+            
+            // Start typing effect after content is visible
+            setTimeout(() => {
+                startTypingEffect();
+            }, 500);
         }, 100);
     }
-    
-    // Initialize hero video
-    initializeHeroVideo();
-});
+}
 
 // Hero Video Initialization
 function initializeHeroVideo() {
@@ -312,33 +324,35 @@ function initializeHeroVideo() {
     }
 }
 
-// Typing Effect for Hero Title (Optional Enhancement)
-document.addEventListener('DOMContentLoaded', function() {
+// Typing Effect for Hero Title
+function startTypingEffect() {
     const heroTitle = document.querySelector('.hero-title');
     
     if (heroTitle && window.innerWidth > 768) { // Only on desktop
         const text = heroTitle.textContent;
         heroTitle.textContent = '';
         heroTitle.style.borderRight = '2px solid #00d4ff';
+        heroTitle.style.animation = 'blink 1s infinite';
         
         let i = 0;
         function typeWriter() {
             if (i < text.length) {
                 heroTitle.textContent += text.charAt(i);
                 i++;
-                setTimeout(typeWriter, 100);
+                setTimeout(typeWriter, 150);
             } else {
                 // Remove cursor after typing
                 setTimeout(() => {
                     heroTitle.style.borderRight = 'none';
+                    heroTitle.style.animation = 'none';
                 }, 1000);
             }
         }
         
-        // Start typing after a delay
-        setTimeout(typeWriter, 1000);
+        // Start typing immediately when called
+        typeWriter();
     }
-});
+}
 
 // Statistics Counter Animation
 function animateStats() {

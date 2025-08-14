@@ -112,15 +112,31 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%) scale(1.1);
+    z-index: -2;
+    object-fit: cover;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+/* Alternative smaller video option - uncomment if you want smaller video */
+/*
+.hero-background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 80%;
     transform: translate(-50%, -50%);
     z-index: -2;
     object-fit: cover;
     pointer-events: none;
+    opacity: 0.9;
+    border-radius: 15px;
 }
+*/
 
 /* Video loading fallback */
 .hero-background-video:not([src]) {
@@ -140,13 +156,18 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.5);
     z-index: -1;
 }
 
 @keyframes float {
     0%, 100% { transform: translateY(0px) rotate(0deg); }
     50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+@keyframes blink {
+    0%, 50% { border-right-color: #00d4ff; }
+    51%, 100% { border-right-color: transparent; }
 }
 
 .hero-content {
@@ -156,6 +177,7 @@ body {
     position: relative;
     max-width: 800px;
     padding: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-title {

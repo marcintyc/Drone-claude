@@ -262,13 +262,10 @@ window.addEventListener('load', function() {
         }, 500);
     }
     
-    // Initialize hero video first
-    initializeHeroVideo();
-    
     // Animate hero content after short delay
     setTimeout(() => {
         animateHeroContent();
-    }, 300);
+    }, 100);
 });
 
 // Separate function for hero content animation
@@ -286,40 +283,26 @@ function animateHeroContent() {
             // Start typing effect after content is visible
             setTimeout(() => {
                 startTypingEffect();
+                enhanceHeroImage();
             }, 500);
         }, 100);
     }
 }
 
-// Hero Video Initialization
-function initializeHeroVideo() {
-    const video = document.querySelector('.hero-background-video');
+// Hero Image Enhancement
+function enhanceHeroImage() {
+    const heroImage = document.querySelector('.hero-background-image');
     
-    if (video) {
-        // Ensure video plays on mobile devices that support it
-        video.addEventListener('loadeddata', function() {
-            console.log('Hero video loaded successfully');
-        });
+    if (heroImage) {
+        // Add subtle animation to hero background
+        heroImage.style.transform = 'scale(1.05)';
+        heroImage.style.transition = 'transform 20s ease-in-out';
         
-        // Fallback for video loading issues
-        video.addEventListener('error', function() {
-            console.log('Video failed to load, falling back to gradient background');
-            const hero = document.querySelector('.hero');
-            if (hero) {
-                hero.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
-            }
-        });
-        
-        // Optimize video playback
-        video.addEventListener('canplay', function() {
-            video.play().catch(function(error) {
-                console.log('Auto-play prevented:', error);
-                // Fallback to gradient if autoplay is blocked
-                const hero = document.querySelector('.hero');
-                if (hero) {
-                    hero.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
-                }
-            });
+        // Parallax effect for background image
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            heroImage.style.transform = `scale(1.05) translateY(${rate}px)`;
         });
     }
 }

@@ -109,31 +109,18 @@ body {
     overflow: hidden;
 }
 
-.hero-background-video {
+.hero-background-image {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 70%;
-    height: 60%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     z-index: -2;
-    object-fit: cover;
-    pointer-events: none;
-    opacity: 0.9;
-    border-radius: 20px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-}
-
-/* Video loading fallback */
-.hero-background-video:not([src]) {
-    display: none;
-}
-
-/* Ensure video loads properly */
-@supports (object-fit: cover) {
-    .hero-background-video {
-        object-fit: cover;
-    }
+    opacity: 0.8;
 }
 
 .hero-overlay {
@@ -142,7 +129,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.6) 0%, rgba(118, 75, 162, 0.6) 100%);
     z-index: -1;
 }
 
@@ -682,11 +669,9 @@ body {
         left: 0;
     }
 
-    /* Mobile video optimization */
-    .hero-background-video {
-        width: 90%;
-        height: 50%;
-        border-radius: 15px;
+    /* Mobile image optimization */
+    .hero-background-image {
+        background-position: center center;
     }
 
     .hero-title {
@@ -731,9 +716,8 @@ body {
 
 @media (max-width: 1024px) and (min-width: 769px) {
     /* Tablet optimization */
-    .hero-background-video {
-        width: 80%;
-        height: 55%;
+    .hero-background-image {
+        background-position: center top;
     }
 }
 
@@ -756,11 +740,10 @@ body {
         align-items: center;
     }
     
-    /* Very small video on mobile */
-    .hero-background-video {
-        width: 95%;
-        height: 40%;
-        border-radius: 10px;
+    /* Mobile image positioning */
+    .hero-background-image {
+        background-position: center center;
+        background-attachment: scroll;
     }
 }
 

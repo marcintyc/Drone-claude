@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keep Droning - Profesjonalne Usługi Dronowe</title>
+    <meta name="description" content="Keep Droning - Profesjonalne usługi filmowania dronem. Oferujemy filmowanie z powietrza dla nieruchomości, ślubów, wydarzeń i projektów komercyjnych.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-plane"></i>
+                <span>Keep Droning</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Strona główna</a>
+                <a href="#services" class="nav-link">Usługi</a>
+                <a href="#gallery" class="nav-link">Galeria</a>
+                <a href="#about" class="nav-link">O nas</a>
+                <a href="#contact" class="nav-link">Kontakt</a>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Keep Droning</h1>
+            <p class="hero-subtitle">Profesjonalne usługi filmowania dronem</p>
+            <p class="hero-description">Tworzymy spektakularne ujęcia z powietrza dla nieruchomości, ślubów, wydarzeń i projektów komercyjnych</p>
+            <div class="hero-buttons">
+                <a href="#gallery" class="btn btn-primary">Zobacz nasze prace</a>
+                <a href="#contact" class="btn btn-secondary">Skontaktuj się</a>
+            </div>
+        </div>
+        <div class="hero-video">
+            <div class="video-overlay"></div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Nasze Usługi</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Nieruchomości</h3>
+                    <p>Profesjonalne filmowanie nieruchomości i działek z powietrza. Prezentujemy Twoją własność w najlepszym świetle.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Śluby i Eventy</h3>
+                    <p>Uwieczniamy najważniejsze chwile z unikalnej perspektywy. Tworzymy niezapomniane wspomnienia.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Budownictwo</h3>
+                    <p>Dokumentujemy postęp prac budowlanych i inwestycji. Monitoring z powietrza dla profesjonalistów.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Projekty Artystyczne</h3>
+                    <p>Tworzymy kinowe ujęcia dla projektów artystycznych, sesji zdjęciowych i produkcji filmowych.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-city"></i>
+                    </div>
+                    <h3>Miasto i Architektura</h3>
+                    <p>Spektakularne ujęcia miast, zabytków i architektury. Pokazujemy piękno z nowej perspektywy.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3>Wydarzenia Plenerowe</h3>
+                    <p>Filmowanie festiwali, odpustów i wydarzeń plenerowych. Uchwytujemy atmosferę z lotu ptaka.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Nasze Realizacje</h2>
+            
+            <!-- Filter Buttons -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Wszystkie</button>
+                <button class="filter-btn" data-filter="artistic">Artystyczne</button>
+                <button class="filter-btn" data-filter="real-estate">Nieruchomości</button>
+                <button class="filter-btn" data-filter="wedding">Śluby</button>
+                <button class="filter-btn" data-filter="construction">Budownictwo</button>
+                <button class="filter-btn" data-filter="city">Miasto</button>
+                <button class="filter-btn" data-filter="events">Wydarzenia</button>
+            </div>
+
+            <!-- Video Gallery -->
+            <div class="video-gallery">
+                <!-- Artistic Videos -->
+                <div class="video-item" data-category="artistic">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/57CBonsylgs/maxresdefault.jpg" alt="Projekt artystyczny">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <h4>Projekt Artystyczny</h4>
+                    <p>Kreatywne ujęcia z profesjonalną modelką</p>
+                    <a href="https://youtube.com/shorts/57CBonsylgs?si=MCCnULqR-0Xnt1fl" target="_blank" class="video-link">
+                        <i class="fab fa-youtube"></i> Zobacz na YouTube
+                    </a>
+                </div>
+
+                <div class="video-item" data-category="artistic">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/f5v2X-ruwWc/maxresdefault.jpg" alt="Sesja z modelką">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <h4>Sesja z Profesjonalną Modelką</h4>
+                    <p>Kinowe ujęcia z powietrza</p>
+                    <a href="https://www.youtube.com/shorts/f5v2X-ruwWc" target="_blank" class="video-link">
+                        <i class="fab fa-youtube"></i> Zobacz na YouTube
+                    </a>
+                </div>
+
+                <div class="video-item" data-category="artistic">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/Jr2BQVyB1nQ/maxresdefault.jpg" alt="Artystyczne ujęcia">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <h4>Artystyczne Ujęcia</h4>
+                    <p>Kreatywne filmowanie z drona</p>
+                    <a href="https://www.youtube.com/shorts/Jr2BQVyB1nQ" target="_blank" class="video-link">
+                        <i class="fab fa-youtube"></i> Zobacz na YouTube
+                    </a>
+                </div>
+
+                <!-- Real Estate -->
+                <div class="video-item" data-category="real-estate">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/OsSLrtB8rUg/maxresdefault.jpg" alt="Nieruchomości i działki">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <h4>Nieruchomości i Działki</h4>
+                    <p>Profesjonalna prezentacja nieruchomości</p>
+                    <a href="https://www.youtube.com/watch?v=OsSLrtB8rUg&feature=youtu.be" target="_blank" class="video-link">
+                        <i class="fab fa-youtube"></i> Zobacz na YouTube
+                    </a>
+                </div>
+
+                <div class="video-item" data-category="real-estate">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/F8CcdoH55Hw/maxresdefault.jpg" alt="Zlecenie nad morzem">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <h4>Zlecenie nad Morzem</h4>
+                    <p>Spektakularne ujęcia nadmorskiej lokalizacji</p>
+                    <a href="https://www.youtube.com/watch?v=F8CcdoH55Hw" target="_blank" class="video-link">
+                        <i class="fab fa-youtube"></i> Zobacz na YouTube
+                    </a>
+                </div>
+
+                <!-- Construction -->
+                <div class="video-item" data-category="construction">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/_8_MUIcyyjE/maxresdefault.jpg" alt="Film z budowy">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <h4>Dokumentacja Budowy</h4>
+                    <p>Monitoring postępu prac budowlanych</p>
+                    <a href="https://www.youtube.com/watch?v=_8_MUIcyyjE" target="_blank" class="video-link">
+                        <i class="fab fa-youtube"></i> Zobacz na YouTube
+                    </a>
+                </div>
+
+                <!-- Events -->
+                <div class="video-item" data-category="events">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/nq1hWZgR6ac/maxresdefault.jpg" alt="Odpust w górach">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <h4>Odpust w Górach</h4>
+                    <p>Filmowanie wydarzenia plenerowego</p>
+                    <a href="https://www.youtube.com/watch?v=nq1hWZgR6ac&t=18s" target="_blank" class="video-link">
+                        <i class="fab fa-youtube"></i> Zobacz na YouTube
+                    </a>
+                </div>
+
+                <!-- City -->
+                <div class="video-item" data-category="city">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/xGjxwV8qbn0/maxresdefault.jpg" alt="Wrocław nocą">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <h4>Wrocław Nocą</h4>
+                    <p>Nocne ujęcia miasta z powietrza</p>
+                    <a href="https://www.youtube.com/shorts/xGjxwV8qbn0" target="_blank" class="video-link">
+                        <i class="fab fa-youtube"></i> Zobacz na YouTube
+                    </a>
+                </div>
+
+                <!-- Wedding -->
+                <div class="video-item" data-category="wedding">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/12yDE8mXRkQ/maxresdefault.jpg" alt="Ślub">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <h4>Filmowanie Ślubne</h4>
+                    <p>Unikalnie ujęte wesele z drona</p>
+                    <a href="https://www.youtube.com/shorts/12yDE8mXRkQ" target="_blank" class="video-link">
+                        <i class="fab fa-youtube"></i> Zobacz na YouTube
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>O Keep Droning</h2>
+                    <p>Jesteśmy profesjonalną firmą specjalizującą się w usługach filmowania dronem. Z pasją tworzymy spektakularne ujęcia z powietrza, które pozwalają na nowe spojrzenie na świat.</p>
+                    <p>Nasze doświadczenie obejmuje szeroki zakres projektów - od dokumentacji nieruchomości, przez filmowanie ślubów i wydarzeń, aż po artystyczne projekty filmowe.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <h3>100+</h3>
+                            <p>Zrealizowanych projektów</p>
+                        </div>
+                        <div class="stat">
+                            <h3>5+</h3>
+                            <p>Lat doświadczenia</p>
+                        </div>
+                        <div class="stat">
+                            <h3>24/7</h3>
+                            <p>Wsparcie klienta</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="drone-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Skontaktuj się z nami</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>kontakt@keepdroning.pl</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Telefon</h4>
+                            <p>+48 123 456 789</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Lokalizacja</h4>
+                            <p>Cała Polska</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Imię i nazwisko" required>
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Telefon">
+                        <select required>
+                            <option value="">Wybierz usługę</option>
+                            <option value="nieruchomości">Nieruchomości</option>
+                            <option value="ślub">Ślub</option>
+                            <option value="budownictwo">Budownictwo</option>
+                            <option value="artystyczne">Projekt artystyczny</option>
+                            <option value="inne">Inne</option>
+                        </select>
+                    </div>
+                    <textarea placeholder="Opisz swój projekt..." rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary">Wyślij wiadomość</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-plane"></i>
+                    <span>Keep Droning</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Strona główna</a>
+                    <a href="#services">Usługi</a>
+                    <a href="#gallery">Galeria</a>
+                    <a href="#contact">Kontakt</a>
+                </div>
+                <div class="social-links">
+                    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Keep Droning. Wszystkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

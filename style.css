@@ -101,6 +101,7 @@ body {
 /* Hero Section */
 .hero {
     height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -112,31 +113,16 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 100%;
-    height: 100%;
-    transform: translate(-50%, -50%) scale(1.1);
-    z-index: -2;
-    object-fit: cover;
-    pointer-events: none;
-    opacity: 0.8;
-}
-
-/* Alternative smaller video option - uncomment if you want smaller video */
-/*
-.hero-background-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 80%;
-    height: 80%;
+    width: 70%;
+    height: 60%;
     transform: translate(-50%, -50%);
     z-index: -2;
     object-fit: cover;
     pointer-events: none;
     opacity: 0.9;
-    border-radius: 15px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
-*/
 
 /* Video loading fallback */
 .hero-background-video:not([src]) {
@@ -156,7 +142,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.2);
     z-index: -1;
 }
 
@@ -698,15 +684,9 @@ body {
 
     /* Mobile video optimization */
     .hero-background-video {
-        display: none;
-    }
-
-    .hero {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    }
-
-    .hero-overlay {
-        background: rgba(0, 0, 0, 0.2);
+        width: 90%;
+        height: 50%;
+        border-radius: 15px;
     }
 
     .hero-title {
@@ -749,6 +729,14 @@ body {
     }
 }
 
+@media (max-width: 1024px) and (min-width: 769px) {
+    /* Tablet optimization */
+    .hero-background-video {
+        width: 80%;
+        height: 55%;
+    }
+}
+
 @media (max-width: 480px) {
     .hero-title {
         font-size: 2rem;
@@ -766,6 +754,13 @@ body {
     .filter-buttons {
         flex-direction: column;
         align-items: center;
+    }
+    
+    /* Very small video on mobile */
+    .hero-background-video {
+        width: 95%;
+        height: 40%;
+        border-radius: 10px;
     }
 }
 
